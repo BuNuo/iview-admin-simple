@@ -17,11 +17,6 @@ import Main from '@/components/main'
  * }
  */
 
-/* const appRouter = [...dynamicRouterAdd()];
-console.log("pp"+appRouter); */
-
-// export const appRouter = [...dynamicRouterAdd()];
-
 export default [
   {
     path: '/login',
