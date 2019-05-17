@@ -51,10 +51,10 @@ npm run build
 ## 效果展示
 
 ### 登录页面
-![Image text](https://github.com/BuNuo/iview-admin-simple/src/assets/images/show-login.png)
+![Image text](https://github.com/BuNuo/iview-admin-simple/blob/master/src/assets/images/show-login.png)
 
 ### 主页面
-![Image text](https://github.com/BuNuo/iview-admin-simple/src/assets/images/show-main.png)
+![Image text](https://github.com/BuNuo/iview-admin-simple/blob/master/src/assets/images/show-main.png)
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)
