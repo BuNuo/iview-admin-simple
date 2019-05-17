@@ -48,6 +48,13 @@ npm run build
     ├── view  页面文件
     └── tests  测试相关
 ```
+## 效果展示
+
+### 登录页面
+![Image text](https://github.com/BuNuo/iview-admin-simple/src/assets/images/show-login.png)
+
+### 主页面
+![Image text](https://github.com/BuNuo/iview-admin-simple/src/assets/images/show-main.png)
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)
