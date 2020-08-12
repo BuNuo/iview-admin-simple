@@ -85,7 +85,8 @@ export default {
       }
 
       router.addRoutes(routes)
-      state.menuList = routes
+      // state.menuList = routes
+      state.menuList = router.options.routes
     }
   },
   actions: {
