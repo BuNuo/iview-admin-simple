@@ -12,7 +12,7 @@ const resolve = dir => {
 // 例如：https://www.foobar.com/my-app/
 // 需要将它改为'/my-app/'
 const BASE_URL = process.env.NODE_ENV === 'production'
-  ? '/'
+  ? './'
   : '/'
 
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
   // sub-path here. For example, if your app is deployed at
   // https://www.foobar.com/my-app/
   // then change this to '/my-app/'
-  baseUrl: BASE_URL,
+  publicPath: BASE_URL,
   // tweak internal webpack configuration.
   // see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
   // 如果你不需要使用eslint，把lintOnSave设为false即可
