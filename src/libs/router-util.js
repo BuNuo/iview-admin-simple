@@ -9,30 +9,19 @@ import lazyLoading from '@/libs/lazyLoading'
 import { getMockMenuData } from '@/api/menu'
 import Main from '@/components/main' // Main 是架构组件，不在后台返回，在文件里单独引入
 import parentView from '@/components/parent-view' // parentView 是二级架构组件，不在后台返回，在文件里单独引入
-// import { mockMenuData } from '@/mock/data/menu'
-var gotRouter
 // 初始化路由
 export const initRouter = (vm) => {
   if (!getToken()) {
     return
   }
-  var routerData
-  console.log(gotRouter, !gotRouter, vm, store, 'initRouter')
-  if (!gotRouter) {
+  var gotRouter = dynamicRouterAdd()
+  if (!gotRouter || gotRouter.length === 0) {
     getMockMenuData().then(res => {
-      routerData = res.data // 后台拿到路由
-      console.log(routerData, "routerData")
-      // var routerData = mockMenuData;
+      var routerData = res.data // 后台拿到路由
       localSave('dynamicRouter', JSON.stringify(routerData)) // 存储路由到localStorage
       gotRouter = filterAsyncRouter(routerData) // 过滤路由,路由组件转换
       store.commit('updateMenuList', gotRouter)
-      // dynamicRouterAdd()
     })
-  } else {
-    console.log(gotRouter, '有数据')
-    gotRouter = dynamicRouterAdd()
-    console.log(gotRouter, 'initRouter gotRouter')
-    // store.commit('updateMenuList', gotRouter)
   }
   return gotRouter
 }
@@ -45,7 +34,6 @@ export const dynamicRouterAdd = () => {
     return dynamicRouter
   }
   dynamicRouter = filterAsyncRouter(JSON.parse(data))
-  console.log('__', dynamicRouter)
   return dynamicRouter
 }
 

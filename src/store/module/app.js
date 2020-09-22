@@ -13,7 +13,7 @@ import beforeClose from '@/router/before-close'
 import router from '@/router/index'
 import routers from '@/router/routers'
 import config from '@/config'
-console.log('dd' + routers)
+
 // import { dynamicRouterAdd } from '@/libs/router-util'
 const { homeName } = config
 
@@ -83,9 +83,7 @@ export default {
       for (let r in routes) {
         router.options.routes.push(routes[r])
       }
-
       router.addRoutes(routes)
-      // state.menuList = routes
       state.menuList = router.options.routes
     }
   },

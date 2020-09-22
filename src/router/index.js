@@ -5,7 +5,7 @@ import store from '@/store'
 import iView from 'iview'
 import { setToken, getToken, canTurnTo } from '@/libs/util'
 import config from '@/config'
-import { initRouter } from '@/libs/router-util'
+import { dynamicRouterAdd } from '@/libs/router-util'
 const { homeName } = config
 
 Vue.use(Router)
@@ -16,10 +16,19 @@ const router = new Router({
 const LOGIN_PAGE_NAME = 'login'
 
 const turnTo = (to, access, next) => {
-  initRouter()
   if (canTurnTo(to.name, access, routes)) next() // 有权限，可访问
   else next({ replace: true, name: 'error_401' }) // 无权限，重定向到401页面
 }
+
+// 这里是防止用户手动刷新页面，整个app要重新加载,动态新增的路由，会消失，所以我们重新add一次
+const dynamicRouter = dynamicRouterAdd()
+if (dynamicRouter && dynamicRouter.length > 0) {
+  for (let r in dynamicRouter) {
+    router.options.routes.push(dynamicRouter[r])
+  }
+  router.addRoutes(dynamicRouter)
+}
+store.state.app.menuList = router.options.routes
 
 router.beforeEach((to, from, next) => {
   iView.LoadingBar.start()

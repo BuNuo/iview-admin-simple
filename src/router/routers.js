@@ -51,6 +51,27 @@ export default [
     ]
   },
   {
+    path: '/mul',
+    name: 'mul',
+    meta: {
+      hideInMenu: false,
+      icon: 'md-menu',
+      title: '多级菜单'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'level1',
+        name: 'level1',
+        meta: {
+          icon: 'md-funnel',
+          title: '一级-1'
+        },
+        component: () => import('@/view/multilevel/level-2-1')
+      }
+    ]
+  },
+  {
     path: '/401',
     name: 'error_401',
     meta: {
