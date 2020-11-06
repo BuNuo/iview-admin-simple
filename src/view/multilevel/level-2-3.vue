@@ -3,6 +3,9 @@
 </template>
 <script>
 export default {
-  name: 'level_2_3'
+  name: 'level_2_3',
+  created () {
+    console.log(this.$route)
+  }
 }
 </script>

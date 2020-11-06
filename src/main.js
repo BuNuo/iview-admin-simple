@@ -10,10 +10,14 @@ import importDirective from '@/directive'
 import 'iview/dist/styles/iview.css'
 import './index.less'
 import '@/assets/icons/iconfont.css'
+import echarts from 'echarts'
 // 实际打包时应该不引入mock
 /* eslint-disable */
 // if (process.env.NODE_ENV !== 'production') 
 require('@/mock')
+
+
+
 
 Vue.use(iView)
 /**
@@ -24,6 +28,10 @@ Vue.config.productionTip = false
  * @description 全局注册应用配置
  */
 Vue.prototype.$config = config
+/**
+ * @description 全局注册echarts
+ */
+Vue.prototype.$echarts = echarts
 /**
  * 注册指令
  */

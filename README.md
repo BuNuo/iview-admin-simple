@@ -4,7 +4,7 @@
     </a>
 </p>
 
-# iView Admin
+# iView Admin Simple
 
 [在线访问](https://bunuo.github.io/iview-admin-simple/)
 

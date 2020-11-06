@@ -10,6 +10,7 @@ const importDirective = Vue => {
    * }
    */
   Vue.directive('draggable', directive.draggable)
+  Vue.directive('onlyNumber', directive.onlyNumber)
 }
 
 export default importDirective
